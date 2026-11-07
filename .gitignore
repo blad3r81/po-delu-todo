@@ -5,3 +5,5 @@ Thumbs.db
 test-results/
 dist/
 assets/planning-source.mp4
+
+.vercel

@@ -5,10 +5,11 @@ const browser = await chromium.launch({headless:true, ...(process.env.BROWSER_PA
 const context = await browser.newContext({viewport:{width:1440,height:1000}});
 const page = await context.newPage();
 const errors = [];
+const baseUrl = process.env.BASE_URL || 'http://localhost:4174/';
 page.on('pageerror', e => errors.push(e.message));
 await mkdir('test-results', {recursive:true});
 try {
-  await page.goto('http://localhost:4174/');
+  await page.goto(baseUrl);
   assert.equal(await page.locator('.media-note,.scroll-note').count(),0);
   assert.equal(await page.locator('.header').evaluate(e => getComputedStyle(e).backgroundColor),'rgba(0, 0, 0, 0)');
   await page.evaluate(() => document.fonts.ready);
@@ -42,7 +43,7 @@ try {
   await page.reload();
   assert.equal(await page.locator('.task-row').count(),1);
   const second = await context.newPage();
-  await second.goto('http://localhost:4174/');
+  await second.goto(baseUrl);
   await input.fill('Сверить мобильную версию');
   await input.press('Enter');
   await second.waitForFunction(() => document.querySelectorAll('.task-row').length === 2);
