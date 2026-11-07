@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#272727">
+  <meta name="description" content="Простой список задач. Добавляйте дела, отмечайте выполненные и возвращайтесь к ним в любое время.">
+  <title>По делу — список задач</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="hero-refresh.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#tasks">К списку задач</a>
+  <header class="header shell">
+    <a class="brand" href="#top" aria-label="По делу, главная"><span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span></span>по делу<span class="brand-period">.</span></a>
+    <span class="header-note">Личный список задач</span>
+    <a class="button button-outline" href="#tasks">Мои задачи</a>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-sticky shell">
+        <div class="hero-copy">
+          <span class="eyebrow">НЕМНОГО ПОРЯДКА В КАЖДОМ ДНЕ</span>
+          <h1 id="hero-title">Сначала<br>одно дело<span>.</span></h1>
+          <p>Запишите всё, что нужно сделать. Отмечайте то, что уже получилось.</p>
+          <a class="button button-orange" href="#tasks">Открыть список</a>
+          <div class="hero-footnote"><span class="small-check" aria-hidden="true">✓</span> Задачи сохраняются в вашем браузере</div>
+        </div>
+        <div class="hero-media">
+          <div class="photo-frame"><video id="planning-video" poster="assets/planning-long-poster.jpg" muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div>
+        </div>
+      </div>
+    </section>
+    <section class="workspace" id="tasks" aria-labelledby="tasks-title">
+      <div class="shell workspace-layout">
+        <aside class="workspace-intro">
+          <span class="eyebrow">ВАШЕ ПРОСТРАНСТВО</span>
+          <h2 id="tasks-title">Мои задачи</h2>
+          <p>Всё нужное в одном месте.</p>
+          <div class="summary"><span id="remaining-count">0</span><span id="remaining-label">активных задач</span></div>
+          <p class="storage-note">Сохранено на этом устройстве.<br>Можно закрыть вкладку и вернуться.</p>
+        </aside>
+        <div class="task-sheet">
+          <div class="sheet-heading"><span>СПИСОК ДЕЛ</span><time id="today"></time></div>
+          <form id="task-form" autocomplete="off">
+            <label class="sr-only" for="task-input">Новая задача</label>
+            <div class="input-row"><input id="task-input" name="task" placeholder="Что нужно сделать?" maxlength="180" required><button class="button button-dark" type="submit">Добавить</button></div>
+            <p id="input-error" class="input-error" hidden></p>
+          </form>
+          <div class="list-toolbar"><div class="filters" role="group" aria-label="Фильтр задач"><button type="button" data-filter="all" aria-pressed="true">Все <span id="all-count">0</span></button><button type="button" data-filter="active" aria-pressed="false">Активные <span id="active-count">0</span></button><button type="button" data-filter="done" aria-pressed="false">Готово <span id="done-count">0</span></button></div><button type="button" class="clear-button" id="clear-done" hidden>Убрать готовые</button></div>
+          <ul id="task-list" aria-label="Список задач"></ul>
+          <div class="empty-state" id="empty-state"><span class="empty-drawing" aria-hidden="true"><span></span><span></span><span></span></span><h3 id="empty-title">Здесь начнётся ваш список</h3><p id="empty-description">Добавьте первое дело в поле выше.</p></div>
+          <div class="sheet-footer"><span id="completion-note">Без спешки. По одному делу.</span><span class="local-tag">ТОЛЬКО ДЛЯ ВАС</span></div>
+          <p class="storage-error" id="storage-error" role="alert" hidden></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer shell"><a class="footer-brand" href="#top">по делу.</a><span>Просто список. Ваш ритм.</span><a href="https://www.pexels.com/video/a-person-writing-her-daily-schedule-5354517/" target="_blank" rel="noopener noreferrer">Видео: Roberto Hund / Pexels</a></footer>
+  <div class="toast" id="toast" hidden><span id="toast-text" role="status"></span><button id="undo" type="button">Вернуть</button><button id="dismiss-toast" type="button" aria-label="Закрыть уведомление">×</button></div>
+  <span class="sr-only" id="announcement" role="status" aria-live="polite"></span>
+</body>
+</html>

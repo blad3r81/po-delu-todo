@@ -1,0 +1,9 @@
+{
+  "name": "po-delu-todo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A minimal Russian task list with local persistence and scroll video.",
+  "scripts": {"start": "node server.mjs", "build": "node build.mjs", "test": "node --test tests/store.test.mjs"},
+  "engines": {"node": ">=20"}
+}

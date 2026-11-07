@@ -1,0 +1,17 @@
+.header{position:absolute;z-index:5;top:0;left:50%;transform:translateX(-50%);background:transparent}
+.header-note{color:#f4f0e8}.header .button-outline{background:#27272799;border-color:#b7b4a877}.header .button-outline:hover{background:#272727}
+.hero{height:340svh;min-height:2000px}
+.hero-sticky.shell{width:100%;margin:0;height:100svh;min-height:680px;max-height:none;display:flex;align-items:center;padding:112px max(48px,calc((100% - 1280px)/2)) 48px;overflow:hidden}
+.hero-copy{width:40%;position:relative;z-index:2;padding-block:24px}
+.hero-copy h1{font-size:72px;line-height:1}
+.hero-copy>p{max-width:400px;font-size:16px;line-height:24px}
+.hero-copy>p br{display:none}
+.hero-footnote{max-width:320px;line-height:20px}
+.hero-media{position:absolute;left:43%;right:0;top:0;bottom:0;min-height:0;max-height:none;height:auto;margin:0;transform:translateY(var(--media-y,0px)) scale(1.04)}
+.photo-frame{border-radius:0;height:100%;background:#626a6a}
+.photo-frame video{transform:none;object-position:22% center}
+@media(min-width:1500px){.hero-copy h1{font-size:96px}}
+@media(max-width:1100px) and (min-width:761px){.hero-copy h1{font-size:60px}.hero-sticky.shell{padding-inline:32px}.hero-copy{width:42%}.hero-media{left:47%}.hero-copy .eyebrow{max-width:240px;display:block}.hero-footnote{max-width:240px}}
+@media(max-width:760px){.header{height:88px}.header-note{display:none}.hero{height:340svh;min-height:2200px}.hero-sticky.shell{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:112px 24px 24px;min-height:780px;gap:32px}.hero-copy{width:100%;padding:0;flex:none;transform:translateY(var(--copy-y,0px))}.hero-copy h1{font-size:60px;margin:16px 0 24px}.hero-copy>p{max-width:440px;margin-bottom:24px}.hero-footnote{display:none}.hero-media{position:relative;inset:auto;height:auto;min-height:280px;flex:1;margin:0 -24px -24px;transform:translateY(var(--media-y,0px)) scale(1.04)}.photo-frame video{object-position:25% center}.header .button-outline{background:transparent}.hero-copy .eyebrow{font-size:12px}}
+@media(max-width:390px){.hero-copy h1{font-size:48px}.hero-sticky.shell{padding-top:112px;gap:24px}.hero-copy>p{font-size:14px;line-height:20px}.hero-media{min-height:300px}}
+@media(prefers-reduced-motion:reduce){.hero{height:auto;min-height:0}.hero-copy{transform:none;opacity:1}.hero-media{transform:none}}

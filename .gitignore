@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+Thumbs.db
+.vercel/
+test-results/
+dist/
+assets/planning-source.mp4
